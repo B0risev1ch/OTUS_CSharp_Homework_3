@@ -1,0 +1,15 @@
+C:\Users\User\source\repos\OTUS_Homework\OTUS_CSharp_Homework_3\OTUS_CSharp_Homework_3\bin\Debug\net6.0\OTUS_CSharp_Homework_3.exe
+C:\Users\User\source\repos\OTUS_Homework\OTUS_CSharp_Homework_3\OTUS_CSharp_Homework_3\bin\Debug\net6.0\OTUS_CSharp_Homework_3.deps.json
+C:\Users\User\source\repos\OTUS_Homework\OTUS_CSharp_Homework_3\OTUS_CSharp_Homework_3\bin\Debug\net6.0\OTUS_CSharp_Homework_3.runtimeconfig.json
+C:\Users\User\source\repos\OTUS_Homework\OTUS_CSharp_Homework_3\OTUS_CSharp_Homework_3\bin\Debug\net6.0\OTUS_CSharp_Homework_3.dll
+C:\Users\User\source\repos\OTUS_Homework\OTUS_CSharp_Homework_3\OTUS_CSharp_Homework_3\bin\Debug\net6.0\OTUS_CSharp_Homework_3.pdb
+C:\Users\User\source\repos\OTUS_Homework\OTUS_CSharp_Homework_3\OTUS_CSharp_Homework_3\obj\Debug\net6.0\OTUS_CSharp_Homework_3.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\OTUS_Homework\OTUS_CSharp_Homework_3\OTUS_CSharp_Homework_3\obj\Debug\net6.0\OTUS_CSharp_Homework_3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\OTUS_Homework\OTUS_CSharp_Homework_3\OTUS_CSharp_Homework_3\obj\Debug\net6.0\OTUS_CSharp_Homework_3.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\OTUS_Homework\OTUS_CSharp_Homework_3\OTUS_CSharp_Homework_3\obj\Debug\net6.0\OTUS_CSharp_Homework_3.AssemblyInfo.cs
+C:\Users\User\source\repos\OTUS_Homework\OTUS_CSharp_Homework_3\OTUS_CSharp_Homework_3\obj\Debug\net6.0\OTUS_CSharp_Homework_3.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\OTUS_Homework\OTUS_CSharp_Homework_3\OTUS_CSharp_Homework_3\obj\Debug\net6.0\OTUS_CSharp_Homework_3.dll
+C:\Users\User\source\repos\OTUS_Homework\OTUS_CSharp_Homework_3\OTUS_CSharp_Homework_3\obj\Debug\net6.0\refint\OTUS_CSharp_Homework_3.dll
+C:\Users\User\source\repos\OTUS_Homework\OTUS_CSharp_Homework_3\OTUS_CSharp_Homework_3\obj\Debug\net6.0\OTUS_CSharp_Homework_3.pdb
+C:\Users\User\source\repos\OTUS_Homework\OTUS_CSharp_Homework_3\OTUS_CSharp_Homework_3\obj\Debug\net6.0\OTUS_CSharp_Homework_3.genruntimeconfig.cache
+C:\Users\User\source\repos\OTUS_Homework\OTUS_CSharp_Homework_3\OTUS_CSharp_Homework_3\obj\Debug\net6.0\ref\OTUS_CSharp_Homework_3.dll
