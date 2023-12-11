@@ -61,7 +61,8 @@ void DoMath(IDictionary data)
     var c = int.Parse(data["c"].ToString());
 
     var  D = Math.Pow(b, 2) - 4 * a * c;
-
+    const double Epsilon = 0.00001;
+   
     switch (D)
     {
         case var expression when D > 0:
@@ -71,7 +72,7 @@ void DoMath(IDictionary data)
             Console.ReadKey();
             break;
 
-        case var expression when D == 0:
+        case var expression when Math.Abs(D) < Epsilon:
             var x = (-b + Math.Sqrt(D)) / (2 * a);
             Console.WriteLine($"x= {x}\n");
             Console.ReadKey();
