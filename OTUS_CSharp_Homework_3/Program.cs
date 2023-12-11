@@ -2,15 +2,15 @@
 
 
 var data = new Dictionary<string, string?>();
-Console.WriteLine($"a * x^2 + b * x + c = 0");
+Console.WriteLine("a * x^2 + b * x + c = 0");
 do
 {
     data.Clear();
-    Console.Write($"a: ");
+    Console.Write("a: ");
     data.Add("a", Console.ReadLine());
-    Console.Write($"b: ");
+    Console.Write("b: ");
     data.Add("b", Console.ReadLine());
-    Console.Write($"c: ");
+    Console.Write("c: ");
     data.Add("c", Console.ReadLine());
 } while (!CorrectUserDataParsed(data));
 
@@ -18,7 +18,7 @@ try
 {
     DoMath(data);
 }
-catch (ArithmeticException e)
+catch (NoAnswerException e)
 {
     FormatData($"{e.Message}", Severity.Warning, null);
 }
@@ -44,7 +44,7 @@ static bool CorrectUserDataParsed(IDictionary data)
         if (formatCastException.Count > 0)
             throw new FormatException();
     }
-    catch (FormatException )
+    catch (FormatException)
     {
         FormatData("Неверный формат параметра", Severity.Error, formatCastException);
         return false;
@@ -53,8 +53,7 @@ static bool CorrectUserDataParsed(IDictionary data)
     return true;
 }
 
-
-void DoMath(IDictionary data)
+static void DoMath(IDictionary data)
 {
     try
     {
@@ -67,7 +66,7 @@ void DoMath(IDictionary data)
 
         switch (D)
         {
-            case var expression when D > 0:
+            case > 0:
                 var x1 = (-b + Math.Sqrt(D)) / (2 * a);
                 var x2 = (-b - Math.Sqrt(D)) / (2 * a);
                 Console.WriteLine($"x1= {x1}\nx2= {x2}");
@@ -81,12 +80,12 @@ void DoMath(IDictionary data)
                 break;
 
             default:
-                throw new ArithmeticException();
+                throw new NoAnswerException();
         }
     }
-    catch (ArithmeticException)
+    catch (NoAnswerException)
     {
-        throw new ArithmeticException("Вещественных корней не найдено!");
+        throw new NoAnswerException();
     }
     catch (Exception)
     {
@@ -106,7 +105,7 @@ static void FormatData(string message, Severity severity, IDictionary data)
             Console.WriteLine("-------------------------------------------------------");
             if (data != null)
                 foreach (DictionaryEntry failedDataEntry in data)
-                Console.WriteLine($"{failedDataEntry.Key} = {failedDataEntry.Value}", severity);
+                    Console.WriteLine($"{failedDataEntry.Key} = {failedDataEntry.Value}", severity);
             break;
 
         case Severity.Error:
@@ -124,7 +123,11 @@ static void FormatData(string message, Severity severity, IDictionary data)
     Console.ResetColor();
 }
 
+class NoAnswerException : Exception
+{
+    public NoAnswerException() : base($"Вещественных корней не найдено!") { }
 
+    }
 
 enum Severity
 {
