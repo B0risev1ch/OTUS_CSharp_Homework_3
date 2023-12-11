@@ -18,9 +18,9 @@ try
 {
     DoMath(data);
 }
-catch
+catch (ArithmeticException e)
 {
-    FormatData("Вещественных значений не найдено", Severity.Warning, null);
+    FormatData($"{e.Message}", Severity.Warning, null);
 }
 
 static bool CorrectUserDataParsed(IDictionary data)
@@ -44,7 +44,7 @@ static bool CorrectUserDataParsed(IDictionary data)
         if (formatCastException.Count > 0)
             throw new FormatException();
     }
-    catch (FormatException e)
+    catch (FormatException )
     {
         FormatData("Неверный формат параметра", Severity.Error, formatCastException);
         return false;
@@ -56,32 +56,42 @@ static bool CorrectUserDataParsed(IDictionary data)
 
 void DoMath(IDictionary data)
 {
-    var a = int.Parse(data["a"].ToString());
-    var b = int.Parse(data["b"].ToString());
-    var c = int.Parse(data["c"].ToString());
-
-    var  D = Math.Pow(b, 2) - 4 * a * c;
-    const double Epsilon = 0.00001;
-   
-    switch (D)
+    try
     {
-        case var expression when D > 0:
-            var x1 = (-b + Math.Sqrt(D)) / (2 * a);
-            var x2 = (-b - Math.Sqrt(D)) / (2 * a);
-            Console.WriteLine($"x1= {x1}\nx2= {x2}");
-            Console.ReadKey();
-            break;
+        var a = int.Parse(data["a"].ToString());
+        var b = int.Parse(data["b"].ToString());
+        var c = int.Parse(data["c"].ToString());
 
-        case var expression when Math.Abs(D) < Epsilon:
-            var x = (-b + Math.Sqrt(D)) / (2 * a);
-            Console.WriteLine($"x= {x}\n");
-            Console.ReadKey();
-            break;
+        var D = Math.Pow(b, 2) - 4 * a * c;
+        const double Epsilon = 0.00001;
 
-        default:
-            throw new Exception("Вещественных значений не найдено");
+        switch (D)
+        {
+            case var expression when D > 0:
+                var x1 = (-b + Math.Sqrt(D)) / (2 * a);
+                var x2 = (-b - Math.Sqrt(D)) / (2 * a);
+                Console.WriteLine($"x1= {x1}\nx2= {x2}");
+                Console.ReadKey();
+                break;
+
+            case var expression when Math.Abs(D) < Epsilon:
+                var x = (-b + Math.Sqrt(D)) / (2 * a);
+                Console.WriteLine($"x= {x}\n");
+                Console.ReadKey();
+                break;
+
+            default:
+                throw new ArithmeticException();
+        }
     }
-    
+    catch (ArithmeticException)
+    {
+        throw new ArithmeticException("Вещественных корней не найдено!");
+    }
+    catch (Exception)
+    {
+        throw new ArithmeticException("Ошибка при расчёте!");
+    }
 }
 
 static void FormatData(string message, Severity severity, IDictionary data)
